@@ -12,14 +12,16 @@ function checkLoginAndPassword(){
  $foundTheClient = false;
  $parserOdpowiedziMySQL = new ParserOdpowiedziMySQL();
  $clientQuantity = $parserOdpowiedziMySQL -> ZapytajBazeOIloscWierszyW("klienci");
- for($i = 1; !$foundTheClient && $i <= $clientQuantity; $i++){
+ for($i = 2; !$foundTheClient && $i <= $clientQuantity+1; $i++){
 	$client = $parserOdpowiedziMySQL -> ZapytajBazeODaneKlienta($i);
 	if($client -> login == $login && $client -> haslo == $password){
 	 $foundTheClient = true;
 	 echo "Zalogowano: ".$login;
 	 $_SESSION['zalogowanyKlient'] = $client;
+	}else{
+	 //TODO
 	}
- } //TODO
+ } 
 }
 
 ?>
