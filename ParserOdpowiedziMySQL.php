@@ -56,7 +56,8 @@ class ParserOdpowiedziMySQL {
 					    $tablicaZDanymiRezerwacji[4], $tablicaZDanymiRezerwacji[5],
 						$tablicaZDanymiRezerwacji[6], $tablicaZDanymiRezerwacji[7],
 						$tablicaZDanymiRezerwacji[8], $tablicaZDanymiRezerwacji[9],
-						$tablicaZDanymiRezerwacji[10], $tablicaZDanymiRezerwacji[11]);
+						$tablicaZDanymiRezerwacji[10], $tablicaZDanymiRezerwacji[11],
+						$tablicaZDanymiRezerwacji[12], $tablicaZDanymiRezerwacji[13]);
  }
  
  function ZapytajBazeODanePracownika($idPracownika){
@@ -80,7 +81,8 @@ class ParserOdpowiedziMySQL {
 													 $tablicaZDanymiRezerwacji[4], $tablicaZDanymiRezerwacji[5],
 													 $tablicaZDanymiRezerwacji[6], $tablicaZDanymiRezerwacji[7],
 													 $tablicaZDanymiRezerwacji[8], $tablicaZDanymiRezerwacji[9],
-													 $tablicaZDanymiRezerwacji[10], $tablicaZDanymiRezerwacji[11]);
+													 $tablicaZDanymiRezerwacji[10], $tablicaZDanymiRezerwacji[11],
+													 $tablicaZDanymiRezerwacji[12], $tablicaZDanymiRezerwacji[13]);
   }
    return $tablicaZObiektamiRezerwacji;
  }

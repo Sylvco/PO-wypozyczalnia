@@ -12,9 +12,11 @@ class Rezerwacja {
 		 $samochodZwrocony,
 		 $idKlienta,
 		 $idPracownika,
-		 $idSamochodu;
+		 $idSamochodu,
+		 $miejsceOdbioru,
+		 $miejsceZwrotu;
 		 
- function Rezerwacja($idRezerwacji, $dataZlozenia, $od, $do, $potwierdzone, $wysOplaty, $wysKaucji, $samochodOdebrany, $samochodZwrocony, $idKlienta, $idPracownika, $idSamochodu){
+ function Rezerwacja($idRezerwacji, $dataZlozenia, $od, $do, $potwierdzone, $wysOplaty, $wysKaucji, $samochodOdebrany, $samochodZwrocony, $idKlienta, $idPracownika, $idSamochodu, $miejsceOdbioru, $miejsceZwrotu){
   $this -> idRezerwacji = $idRezerwacji;
   $this -> dataZlozenia = $dataZlozenia;
   $this -> odKiedy = $od;
@@ -27,6 +29,8 @@ class Rezerwacja {
   $this -> idKlienta = $idKlienta;
   $this -> idPracownika = $idPracownika;
   $this -> idSamochodu = $idSamochodu;
+  $this -> miejsceOdbioru = $miejsceOdbioru;
+  $this -> miejsceZwrotu = $miejsceZwrotu;
  }
 }
 
