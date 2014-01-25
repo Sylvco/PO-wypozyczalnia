@@ -2,26 +2,34 @@
 
 require_once("ParserOdpowiedziMySQL.php");
 
+session_start();
+
 if(isset($_POST['login']) && isset($_POST['haslo']))
  checkLoginAndPassword();
 
+header('Location: konto.php');
+
 function checkLoginAndPassword(){
- $login = $_POST['login'];
- $password = $_POST['haslo'];
- 
- $foundTheClient = false;
+ $answer = checkLoginAndPasswordFor("klienci", "klient", "ZapytajBazeODaneKlienta");
+ if(!$answer)
+  $answer = checkLoginAndPasswordFor("pracownicy", "pracownik", "ZapytajBazeODanePracownika");
+}
+
+function checkLoginAndPasswordFor($table, $arrayKey, $clientFunction){
+ $foundTheMan = false;
  $parserOdpowiedziMySQL = new ParserOdpowiedziMySQL();
- $clientQuantity = $parserOdpowiedziMySQL -> ZapytajBazeOIloscWierszyW("klienci");
- for($i = 2; !$foundTheClient && $i <= $clientQuantity+1; $i++){
-	$client = $parserOdpowiedziMySQL -> ZapytajBazeODaneKlienta($i);
-	if($client -> login == $login && $client -> haslo == $password){
-	 $foundTheClient = true;
-	 echo "Zalogowano: ".$login;
-	 $_SESSION['zalogowanyKlient'] = $client;
-	}else{
-	 //TODO
-	}
- } 
+ $recordQuantity = $parserOdpowiedziMySQL -> ZapytajBazeOIloscWierszyW($table);
+ for($i = 2; !$foundTheMan && $i <= $recordQuantity+1; $i++){
+	$client = $parserOdpowiedziMySQL -> $clientFunction($i);
+	if($client -> login == $_POST['login'] && $client -> haslo == $_POST['haslo']){
+	 $foundTheMan = true;
+	 echo "Zalogowano: ".$_POST['login'];
+	 $_SESSION[$arrayKey] = $client;
+	 
+    }
+ 
+ }
+  return $foundTheMan;
 }
 
 ?>

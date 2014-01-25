@@ -5,6 +5,7 @@ require_once("ObslugaKwerendMySQL.php");
 require_once("Samochod.php");
 require_once("Klient.php");
 require_once("Rezerwacja.php");
+require_once("Pracownik.php");
 
 class ParserOdpowiedziMySQL {
  private $obslugaKwerend;
@@ -31,7 +32,7 @@ class ParserOdpowiedziMySQL {
  }
  
  function ZapytajBazeODaneSamochodu($idSamochodu){
-  $tablicaZDanymiSamochodu = $this -> ZapytajBazeODaneZKonkretnymId("Samochody","IdSamochodu",$idSamochodu);
+  $tablicaZDanymiSamochodu = $this -> ZapytajBazeODaneZKonkretnymId("samochody","IdSamochodu",$idSamochodu);
   return New Samochod($tablicaZDanymiSamochodu[0], $tablicaZDanymiSamochodu[1],
                       $tablicaZDanymiSamochodu[2], $tablicaZDanymiSamochodu[3],
 					  $tablicaZDanymiSamochodu[4], $tablicaZDanymiSamochodu[5],
@@ -39,7 +40,7 @@ class ParserOdpowiedziMySQL {
  }
  
  function ZapytajBazeODaneKlienta($idKlienta){
-  $tablicaZDanymiKlienta =  $this -> ZapytajBazeODaneZKonkretnymId("Klienci","IdKlienta",$idKlienta);
+  $tablicaZDanymiKlienta =  $this -> ZapytajBazeODaneZKonkretnymId("klienci","IdKlienta",$idKlienta);
   return New Klient(  $tablicaZDanymiKlienta[0],$tablicaZDanymiKlienta[1],
                       $tablicaZDanymiKlienta[2],$tablicaZDanymiKlienta[3],
 					  $tablicaZDanymiKlienta[4],$tablicaZDanymiKlienta[5],
@@ -49,13 +50,22 @@ class ParserOdpowiedziMySQL {
  }
  
  function ZapytajBazeODaneRezerwacji($idRezerwacji){
-  $tablicaZDanymiRezerwacji = $this -> ZapytajBazeODaneZKonkretnymId("Rezerwacje","IdRezerwacji",$idRezerwacji);
+  $tablicaZDanymiRezerwacji = $this -> ZapytajBazeODaneZKonkretnymId("rezerwacje","IdRezerwacji",$idRezerwacji);
   return New Rezerwacja($tablicaZDanymiRezerwacji[0], $tablicaZDanymiRezerwacji[1],
                         $tablicaZDanymiRezerwacji[2], $tablicaZDanymiRezerwacji[3],
 					    $tablicaZDanymiRezerwacji[4], $tablicaZDanymiRezerwacji[5],
 						$tablicaZDanymiRezerwacji[6], $tablicaZDanymiRezerwacji[7],
 						$tablicaZDanymiRezerwacji[8], $tablicaZDanymiRezerwacji[9],
 						$tablicaZDanymiRezerwacji[10], $tablicaZDanymiRezerwacji[11]);
+ }
+ 
+ function ZapytajBazeODanePracownika($idPracownika){
+  $tablicaZDanymiPracownika = $this -> ZapytajBazeODaneZKonkretnymId("pracownicy", "IdPracownika", $idPracownika);
+  return new Pracownik($tablicaZDanymiPracownika[0], $tablicaZDanymiPracownika[1],
+					   $tablicaZDanymiPracownika[2], $tablicaZDanymiPracownika[3],
+					   $tablicaZDanymiPracownika[4], $tablicaZDanymiPracownika[5],
+					   $tablicaZDanymiPracownika[6], $tablicaZDanymiPracownika[7]
+						);
  }
  
  function ZapytajBazeODaneNiepotwierdzonychRezerwacji(){
