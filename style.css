@@ -1,0 +1,255 @@
+
+html{
+  height:100%;
+}
+
+body{
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-family: 'Helvetica', sans-serif;
+  display: block;
+}
+
+footer{
+  text-align: center;
+  margin-top: 20px;
+  height: 20px;
+  clear:both;  
+  width: 100%;
+}
+
+nav{
+  background-color: #3E4957;
+  color: #D9E6F7;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  -moz-box-shadow: 0 3px 5px -2px #888;    /*mozilla*/
+  -webkit-box-shadow: 0 3px 5px -2px #888;  /*webkit*/
+  -webkit-transform: translateZ(0); /* chrome*/
+  box-shadow: 0 1px 0 #888;
+}
+
+nav a{
+  color: #D9E6F7;  
+  font-size: 17px;
+  font-family: 'Helvetica', sans-serif;
+  padding: 10px;
+  margin: 5px;
+  line-height: 50px;
+}
+
+a{
+  text-decoration: none;
+  color: #3E4957;
+}
+
+a:hover{
+  color: #8D3A61;
+}
+
+nav a:hover{
+  color: #D9E6F7;
+  background-color: #8D3A61;
+}
+
+div.content{
+margin-top: 80px;
+}
+
+#aliged_right_menu_item{
+  position: absolute;
+  text-align: right;
+}
+
+/* strona logowania */
+
+#formularz_logowania{
+  width: 400px;
+  height: 200px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  margin-left: -200px;
+}
+
+.down{
+  position:absolute;
+  bottom: 0px;
+  left: 0px;
+  margin:0px;
+}
+
+
+#banner{
+  width: 55%;
+  height: 150px; 
+  background-color: white;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+img.log{
+  display: inline;
+  width: 20%;
+  height: auto;
+  padding: 9px;
+}
+
+/*kontakt*/
+#contact{
+  display: inline-block;
+  width: 90%;
+  left: 5%;
+}
+
+#address{
+  display: inline-block;
+  float:left;
+  width: 50%;
+  margin-left: 20px;
+}
+
+#address h3{
+  font-weight: bold;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 17px;
+}
+
+#map{
+  display: inline-block;
+}
+
+/*grafik*/
+
+table{
+  padding: 5px;
+  background-color: white;
+}
+
+#grafik{
+  display:table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center{
+  text-align: center;
+}
+
+th,td{
+  width: 100px;
+  border: none;
+}
+
+th{
+  background-color: #D9E6F7;
+  height: 30px;
+}
+
+th#table_header{
+  background-color: transparent;
+  height: 50px;
+  font-size: 21px;
+}
+
+td.filled {
+  color: #333;
+  cursor: pointer;
+}
+
+td {
+  background: #ECF2FB;
+  height: 15px;
+  padding: 6px 10px;
+  text-align: center;
+  text-shadow: 0px 1px 1px rgba(255,255,255,1);
+  line-height: 1;
+}
+
+td#whiteout{
+  background-color: white;
+}
+
+td.opis{
+  width: 300px;
+}
+
+td.color{
+  width:20px;
+}
+
+td.green{
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(#63ef60));
+}
+
+td.yellow{
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(#eaef60));
+}
+
+td.red{
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(#ef4949));
+}
+
+td.blue{
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(#49afef));
+}
+
+
+
+/*instruktorzy*/
+
+#instruktorzy{
+  margin-left: 30px;
+  margin-right: auto;
+}
+
+.instr_info ul ul{
+  display: none;
+}
+
+.instr_info ul{
+  cursor: pointer;
+}
+
+.instr_info ul span:hover{
+ font-weight: bold;
+}
+
+div.anchor{ 
+  width:40%;
+  height: 200px;
+  margin-bottom: 20px;
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+div.instr_info{
+  display:inline-block;
+  height: 150px;
+  width: 75%;
+  float:right;
+  padding:5px;
+}
+
+img.inst_photo{
+  display:inline-block;
+  float:left;
+  width: 20%;
+  height: 150px;
+  padding: 5px;
+}
+
+/*o nas*/
+article{
+  margin: 20px;
+}
+
+section{
+  margin-bottom: 10px;
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+  
+		<meta charset=\"utf-8\">
+		
+		<link rel=\"Stylesheet\" type=\"text/css\" href=\"wzorUmowy.css\" />
+		
+		<div class=\"left\">$miejscowosc</div><div class=\"right\">$data</div>
+		
+		<br><br><br>
+		
+		<center>
+		
+		$nazwaFirmy <br>
+		
+		Umowa wynajmu samochodu o nr ID: $idSamochodu
+
+		</center>
+		<br><br>
+		
+		<div class=\"Blok\">
+		
+		<div class=\"title\">
+		
+		Najemca: <br>
+		
+		</div>
+		
+		<div class=\"text\">
+		
+		Imiê: $imie	<br>		        
+		Nazwisko: $nazwisko <br>		    
+		Adres: $adres <br>			    
+		Nr telefonu: $numerTelefonu <br>
+		PESEL: $pesel <br>
+		Nr prawa jazdy: $nrPrawaJazdy <br>
+		
+		</div>
+		</div>
+		<br><br>
+		
+		<div class=\"Blok\">
+		
+		<div class=\"title\">
+		
+		Samochód: <br>
+		
+		</div>
+		<div class=\"text\">
+		
+		ID: $idSamochodu <br>
+		Marka: $marka <br>
+		Model: $model <br>
+		Rocznik: $rocznik <br>
+		
+		</div>
+		</div>
+		<br><br>
+		
+		<div class=\"Blok\">
+		
+		<div class=\"title\">
+		
+		Wynajem: <br><br>
+		
+		</div>
+		<div class=\"text\">
+		
+		Od: $od <br> Do: $do <br><br>
+		<center>Op³ata:</center> <br>
+		Wysokoœæ op³aty: $wysokoscOplaty z³ <br>
+		Kaucja: $kaucja z³<br>
+		
+		</div>
+		</div>
+		<br><br>
+		
+		<div class=\"Blok\">
+		
+		<div class=\"title\">
+		
+		Zwrot samochodu: <br>
+		
+		</div>
+		<div class=\"text\">
+		
+		Data: <br>
+		Godzina: <br>
+		Stan licznika: <br>
+		Stan paliwa: <br>
+		Uwagi: <br><br><br><br>
+		Podpis najemcy: <br>
+		Podpis pracownika <br><br>
+		
+		</div>
+		</div>
+		<br><br><br>
+		
+		<div class=\"left\">Podpis Wynajmuj¹cego: ......................</div>
+		<div class=\"right\">Podpis najemcy: ......................</div>
+
+		</html>
+
+
+  
