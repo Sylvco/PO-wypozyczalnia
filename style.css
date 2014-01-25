@@ -61,8 +61,7 @@ margin-top: 80px;
 }
 
 #aliged_right_menu_item{
-  position: absolute;
-  text-align: right;
+  float: right;
 }
 
 /* strona logowania */
