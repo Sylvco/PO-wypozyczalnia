@@ -20,7 +20,8 @@ class ParserOdpowiedziMySQL {
   
   for($i = 0; $i < $liczbaWynikow; $i++)
    $tablicaWynikow[$i] = mysql_fetch_row($odpowiedz);
-   
+  
+  
   if($liczbaWynikow == 1)
    return $tablicaWynikow[0];
   else 
@@ -36,7 +37,8 @@ class ParserOdpowiedziMySQL {
   return New Samochod($tablicaZDanymiSamochodu[0], $tablicaZDanymiSamochodu[1],
                       $tablicaZDanymiSamochodu[2], $tablicaZDanymiSamochodu[3],
 					  $tablicaZDanymiSamochodu[4], $tablicaZDanymiSamochodu[5],
-					  $tablicaZDanymiSamochodu[6]);
+					  $tablicaZDanymiSamochodu[6], $tablicaZDanymiSamochodu[7],
+					  $tablicaZDanymiSamochodu[8]);
  }
  
  function ZapytajBazeODaneKlienta($idKlienta){
@@ -70,19 +72,22 @@ class ParserOdpowiedziMySQL {
  }
  
  function ZapytajBazeODaneNiepotwierdzonychRezerwacji(){
-  $kwerenda = "SELECT * FROM Rezerwacje WHERE Potwierdzone='0'";
+  $kwerenda = 'SELECT * FROM rezerwacje WHERE Potwierdzone="0"';
   $resource = $this -> obslugaKwerend -> ObsluzKwerendePytajaca($kwerenda);
-  $tablicaZDanymiRezerwacji = ParsujOdpowiedz($resource);
+  $liczbaRezerwacji = mysql_num_rows($resource);
+  $tablicaZDanymiRezerwacji = $this -> ParsujOdpowiedz($resource);
+  if($liczbaRezerwacji == 1)
+   $tablicaZDanymiRezerwacji = array($tablicaZDanymiRezerwacji);
   $tablicaZObiektamiRezerwacji = array();
   
-  for($i = 0; $i < count($tablicaZDanymiRezerwacji); $i++){
-   $tablicaZObiektamiRezerwacji[$i] = New Rezerwacja($tablicaZDanymiRezerwacji[0], $tablicaZDanymiRezerwacji[1],
-													 $tablicaZDanymiRezerwacji[2], $tablicaZDanymiRezerwacji[3],
-													 $tablicaZDanymiRezerwacji[4], $tablicaZDanymiRezerwacji[5],
-													 $tablicaZDanymiRezerwacji[6], $tablicaZDanymiRezerwacji[7],
-													 $tablicaZDanymiRezerwacji[8], $tablicaZDanymiRezerwacji[9],
-													 $tablicaZDanymiRezerwacji[10], $tablicaZDanymiRezerwacji[11],
-													 $tablicaZDanymiRezerwacji[12], $tablicaZDanymiRezerwacji[13]);
+  for($i = 0; $i < $liczbaRezerwacji; $i++){
+   $tablicaZObiektamiRezerwacji[$i] = New Rezerwacja($tablicaZDanymiRezerwacji[$i][0], $tablicaZDanymiRezerwacji[$i][1],
+													 $tablicaZDanymiRezerwacji[$i][2], $tablicaZDanymiRezerwacji[$i][3],
+													 $tablicaZDanymiRezerwacji[$i][4], $tablicaZDanymiRezerwacji[$i][5],
+													 $tablicaZDanymiRezerwacji[$i][6], $tablicaZDanymiRezerwacji[$i][7],
+													 $tablicaZDanymiRezerwacji[$i][8], $tablicaZDanymiRezerwacji[$i][9],
+													 $tablicaZDanymiRezerwacji[$i][10], $tablicaZDanymiRezerwacji[$i][11],
+													 $tablicaZDanymiRezerwacji[$i][12], $tablicaZDanymiRezerwacji[$i][13]);
   }
    return $tablicaZObiektamiRezerwacji;
  }
@@ -99,9 +104,9 @@ class ParserOdpowiedziMySQL {
   $kwerenda = "DELETE * FROM Rezerwacje WHERE IdRezerwacji='".$idRezerwacji."'";
   $odpowiedz = $this -> obslugaKwerend -> ObsluzKwerendeUsuwajaca($kwerenda);
   if($odpowiedz)
-   PrzekazOdpowiedzPotwierdzajacaZmiany("Pomyślnie usunięto rezerwacje o numerze: ".$idRezerwacji);
+   ParserOdpowiedziMySQL::PrzekazOdpowiedzPotwierdzajacaZmiany("Pomyślnie usunięto rezerwacje o numerze: ".$idRezerwacji);
   else
-   PrzekazOdpowiedzPotwierdzajacaZmiany("Usuwanie rezerwacji o numerze: ".$idRezerwacji." nie powiodło się.");
+   ParserOdpowiedziMySQL::PrzekazOdpowiedzPotwierdzajacaZmiany("Usuwanie rezerwacji o numerze: ".$idRezerwacji." nie powiodło się.");
  }
  
  private function ZapytajBazeODaneZKonkretnymId($nazwaTabeli, $nazwaId, $szukaneId){
