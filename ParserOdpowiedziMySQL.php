@@ -115,6 +115,13 @@ class ParserOdpowiedziMySQL {
   $tablicaZDanymi = $this -> ParsujOdpowiedz($resource);
   return $tablicaZDanymi;
  }
+
+  function SprawdzCeneKategorii($nazwaKategorii){
+  $kwerenda = "SELECT * FROM kategorieSamochodow WHERE NazwaKat='".$nazwaKategorii."'";
+  $resource = $this -> obslugaKwerend -> ObsluzKwerendePytajaca($kwerenda);
+  $info = mysql_fetch_array( $resource )
+  return $info['WysokoscOplaty'];
+ }
 }
 
 ?>
