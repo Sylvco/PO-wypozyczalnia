@@ -13,6 +13,7 @@ class ObslugaKwerendMySQL {
  
    $connectionToDatabase = mysql_connect($host, $user, $pass) or die("Błąd połączenia z bazą danych!");
    mysql_select_db($databaseName) or die("Baza danych o nazwie: ".$databaseName." nie istnieje!");
+   mysql_query("SET NAMES utf8");
  }
  
  function ObsluzKwerendePytajaca($kwerenda){
