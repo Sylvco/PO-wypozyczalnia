@@ -38,7 +38,7 @@
 		<div id="formularz_logowania">
 			<h2>Witaj <?php echo $_POST['login'];?>!</h2>
 			<p>Wprowadź swoje dane, aby się zalogować.</p>
-			<form action="" method="post">
+			<form action="login.php" method="post">
 				<p>
 					Login:&ensp;<input type="text" name="login" id="login" required><br>
 					Hasło:&ensp;<input type="password" name="haslo" required>
