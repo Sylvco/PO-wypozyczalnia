@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>TwentyThree | Twoje Konto</title>
+	<title>TwentyThree | Drukowanie Umowy</title>
 
 	<meta name="description" content="Strona wypożyczalni">
 
@@ -17,52 +17,29 @@
     <header>
 	<nav>
 		<div>
-			<span><a href="home.php">Strona Główna</a></span>
-			<span><a href="samochody.php">Samochody</a></span>
-			<span><a href="cennik.php">Cennik</a></span>
-			<span><a href="faq.php">FAQ</a></span>
-			<span><a href="kontakt.php">Kontakt</a></span>
-			<span id="aliged_right_menu_item"><a href="logout.php">Wyloguj</a></span>
+			<span><a href="odnotowywanieTransakcji.php">Odnotowywanie Transakcji</a></span>
+			<span><a href="potwierdzanieRezerwacji.php">Potwierdzanie Rezerwacji</a></span>
+			<span><a href="drukowanieUmowy.php">Drukowanie Umowy</a></span>
+			<span id="aliged_right_menu_item"><a href="konto.php">Konto</a></span>
 		</div>
 		
-	</nav>
+	</nav> <br><br><br><br>
 	
 	</header>
-	
-	<center>
-	<br><br>
-	<h1> Twoje Konto </h1>
-	</center>
-	Numer klienta: 
-	
-	<?php 
-	require_once("Klient.php");
-	session_start();
-	$client = $_SESSION['klient'];
-	echo $client -> idKlienta;
-	?>
-	
-	<form action="updateClientsEmailAndNumber.php" method="post">
-				<p>
-					Adres e-mail:&ensp;<input type="text" name="email" id="login" value="<?php echo $client -> email;?>" required><br>
-					Numer kontaktowy:&ensp;<input type="text" name="numer" value="<?php echo $client -> numerTelefonu;?>" required>
-				</p>
-				<input type="submit" value="Zmień dane">
-	</form>
-	<center>Ostatnie Rezerwacje</center>
+		
 	<div id="listaRezerwacji">
 
     <?php 
 	 DajBlokiRezerwacji();
 	?>
 
-    </div>
+    </div>	
+		
 		
 </body>
 </html>
 
 <?php
-
 
 function DajBlokiRezerwacji(){
  require_once("ParserOdpowiedziMySQL.php");
@@ -70,10 +47,9 @@ function DajBlokiRezerwacji(){
  require_once("Rezerwacja.php");
  
  
- $client = $_SESSION['klient'];
  $obslugaKwerend = new ObslugaKwerendMySQL();
  $parserOdpowiedzi = new ParserOdpowiedziMySQL();
- $kwerenda = 'SELECT * FROM rezerwacje WHERE Klient="'.$client->idKlienta.'" ORDER BY DataZlozenia DESC';
+ $kwerenda = 'SELECT * FROM rezerwacje ORDER BY DataZlozenia DESC';
  
  $res = $obslugaKwerend -> ObsluzKwerendePytajaca($kwerenda);
  $rezerwacje = stworzObiektyRezerwacji($res);
@@ -118,21 +94,13 @@ function DajBlokRezerwacjiDla($rezerwacja, $samochod){
 		   
 		   <br>
 		   
-		   <form action="usunRezerwacje.php" method="POST">
+		   <form action="drukujUmowe.php" method="POST">
 		   <input type="hidden" value="'.$rezerwacja->idRezerwacji.'" name="idRezerwacji">
-		   <input type="submit" value="Anuluj rezerwację">
+		   <input type="submit" value="Drukuj umowę wypożyczenia">
 		   </form>
 		   
-		   </div>
+		   </div><br>
 		  ';
-}
-
-function UsunRezerwacje(){
- if(isset($_POST['idRezerwacji'])){
-  echo "PRzeszło";
- }else{
-  echo "Nie przeszło";
- }
 }
 
 function DajChecked($rezerwacja){
@@ -141,4 +109,5 @@ function DajChecked($rezerwacja){
  else
   return '';
 }
+
 ?>

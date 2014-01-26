@@ -1,3 +1,0 @@
-adres jest zwyklym stringiem, nie klasa
-zauwazam coraz wiecej niescislosci xD
-mniejsze klasy zaimplementowane, Zostalo GUI i generowanie umowy xD
