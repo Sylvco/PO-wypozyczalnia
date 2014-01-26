@@ -30,11 +30,16 @@
 			<span id="aliged_right_menu_item"><a href="konto.html">Konto</a></span>
 		</div>
 		
-	</nav>
+	</nav><br><br><br><br>
 	
 	</header>
 <?php
-$sql = "SELECT * FROM products";
+
+require_once("ObslugaKwerendMySQL.php");
+require_once("ParserOdpowiedziMySQL.php");
+
+$sql = "SELECT * FROM samochody";
+$obslugaKwerend = new ObslugaKwerendMySQL();
 $parserOdpowiedzi = new ParserOdpowiedziMySQL();
 $resource = $obslugaKwerend -> ObsluzKwerendePytajaca($sql);
 $iloscRekordow = mysql_num_rows($resource);
@@ -48,19 +53,19 @@ $iloscRekordow = mysql_num_rows($resource);
   <option value='A'>B</option>
   <option value='S'>S</option>
 </select>
-</div>"
+</div>";
   echo "<div id='maindiv'>
 <div id='relativediv'>";
 $counter = 2;
 while($counter<=$iloscRekordow){
-$auto = $parserOdpowiedzi -> ZapytajBazeODaneSamochodu($counter);
-  $category     = $auto -> $kategoria;
-  $make    = $auto -> $marka;
-  $model     = $auto -> $model;
-  $year = $auto -> $rocznik;
-  $gaseusage    = $auto -> $spalanie;
+ $auto = $parserOdpowiedzi -> ZapytajBazeODaneSamochodu($counter);
+  $category     = $auto -> kategoria;
+  $make    = $auto -> marka;
+  $model     = $auto -> model;
+  $year = $auto -> rocznik;
+  $gaseusage    = $auto -> spalanie;
   $price    = $parserOdpowiedzi -> SprawdzCeneKategorii($category);
-  $photo    = $auto -> $obrazek;
+  $photo    = $auto -> obrazek;
 
 
 
@@ -78,7 +83,7 @@ echo "
 <p>Cena bazowa ".$price." zł/dzień</p>
 <button class='column3' type='button'>Rezerwuj</button>
 </div>
-"
+";
 $counter++;
 }
 
