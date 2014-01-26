@@ -22,12 +22,12 @@
     	?>
  <nav>
 		<div>
-			<span><a href="home.html">Home</a></span>
-			<span><a href="samochody.html">Samochody</a></span>
-			<span><a href="cennik.html">Cennik</a></span>
-			<span><a href="faq.html">FAQ</a></span>
+			<span><a href="home.php">Strona Główna</a></span>
+			<span><a href="samochody.php">Samochody</a></span>
+			<span><a href="cennik.php">Cennik</a></span>
+			<span><a href="faq.php">FAQ</a></span>
 			<span><a href="kontakt.php">Kontakt</a></span>
-			<span id="aliged_right_menu_item"><a href="konto.html">Konto</a></span>
+			<span id="aliged_right_menu_item"><a href="konto.php">Konto</a></span>
 		</div>
 		
 	</nav><br><br><br><br>
@@ -63,7 +63,7 @@ while($counter<=$iloscRekordow){
   $make    = $auto -> marka;
   $model     = $auto -> model;
   $year = $auto -> rocznik;
-  $gaseusage    = $auto -> spalanie;
+  $gasusage    = $auto -> spalanie;
   $price    = $parserOdpowiedzi -> SprawdzCeneKategorii($category);
   $photo    = $auto -> obrazek;
 
