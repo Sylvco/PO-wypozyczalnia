@@ -8,7 +8,7 @@
 
 	<meta name="description" content="Strona wypożyczalni">
 
-	<link href="menu.css" rel="stylesheet">
+	<link href="kontoKlienta.css" rel="stylesheet">
 
 </head>
 
@@ -33,6 +33,8 @@
 	<br><br>
 	<h1> Twoje Konto </h1>
 	</center>
+	<br><br><br><br>
+	<font >
 	Numer klienta: 
 	
 	<?php 
@@ -42,14 +44,24 @@
 	echo $client -> idKlienta;
 	?>
 	
+	</font>
+	<br><br>
 	<form action="updateClientsEmailAndNumber.php" method="post">
-				<p>
-					Adres e-mail:&ensp;<input type="text" name="email" id="login" value="<?php echo $client -> email;?>" required><br>
-					Numer kontaktowy:&ensp;<input type="text" name="numer" value="<?php echo $client -> numerTelefonu;?>" required>
-				</p>
-				<input type="submit" value="Zmień dane">
+				<div id="form">
+				<div id="leftForm">
+				    Adres e-mail:<br>
+					Numer kontaktowy: 
+				</div>
+				<div id="rightForm">
+				<input type="text" name="numer" value="<?php echo $client -> numerTelefonu;?>" required> <br>
+				<input type="text" name="email" id="login" value="<?php echo $client -> email;?>" required>
+				</div>
+				</div>
+				<br><br><br><br>
+				<div id="button"> <input type="submit" value="Zmień dane"> </div>
 	</form>
-	<center>Ostatnie Rezerwacje</center>
+	<br><br><br><br>
+	<center>Ostatnie Rezerwacje</center><br>
 	<div id="listaRezerwacji">
 
     <?php 
@@ -106,7 +118,7 @@ function StworzObiektyRezerwacji($resource){
 function DajBlokRezerwacjiDla($rezerwacja, $samochod){
  return '  <div id="blokRezerwacji">
 						   
-		   Numer Rezerwacji: '.$rezerwacja -> idRezerwacji.'<br>
+		   <div id="top"><p> Numer Rezerwacji: '.$rezerwacja -> idRezerwacji.'</p><div><input type="checkbox" disabled="disabled" '.DajChecked($rezerwacja).'> Potwierdzona</div></div><br>
 		   Marka: '.$samochod -> marka.'<br>
 		   Model: '.$samochod -> model.'<br>
 		   Data Odbioru: '.$rezerwacja -> odKiedy.'<br>
@@ -114,7 +126,6 @@ function DajBlokRezerwacjiDla($rezerwacja, $samochod){
 		   Miejsce Odbioru: '.$rezerwacja -> miejsceOdbioru.'<br>
 		   Miejsce Zwrotu: '.$rezerwacja -> miejsceZwrotu.'<br>
 		   
-		   <input type="checkbox" disabled="disabled" '.DajChecked($rezerwacja).'> Potwierdzona
 		   
 		   <br>
 		   
@@ -123,7 +134,7 @@ function DajBlokRezerwacjiDla($rezerwacja, $samochod){
 		   <input type="submit" value="Anuluj rezerwację">
 		   </form>
 		   
-		   </div>
+		   </div><br>
 		  ';
 }
 
