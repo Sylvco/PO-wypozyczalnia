@@ -30,9 +30,35 @@ a{
   color: #3E4957;
 }
 
+table{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
 #blok {
+  float: left;
  border-style: solid;
+ width: 30%;
+ background: #ECF2FB;
+ padding: 10px;
  border-width: 1px;
- width: 500px;
- height: 700px;
+text-align: center;
+}
+
+#onas{
+  border: 1px solid black;
+  width: 65%;
+  float: left;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+#wrapper{
+  width: 100%;
+}
+
+h3{
+  padding: 0px;
+  margin: 0px;
 }

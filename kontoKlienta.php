@@ -17,7 +17,7 @@
     <header>
 	<nav>
 		<div>
-			<span><a href="home.php">Strona Główna</a></span>
+			<span><a href="home.php">Strona główna</a></span>
 			<span><a href="samochody.php">Samochody</a></span>
 			<span><a href="cennik.php">Cennik</a></span>
 			<span><a href="faq.php">FAQ</a></span>

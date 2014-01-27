@@ -6,10 +6,10 @@ class ObslugaKwerendMySQL {
  private $connectionToDatabase;
  
  function ObslugaKwerendMySQL(){
-   $databaseName = '1247450_hiddenusers';
-   $user = '1384374476_f';
-   $pass = 'euratio12';
-   $host = 'mysql1.ph-hos.osemka.pl';
+   $databaseName = 'base';
+   $user = 'admin';
+   $pass = 'admin';
+   $host = 'localhost';
  
    $connectionToDatabase = mysql_connect($host, $user, $pass) or die("Błąd połączenia z bazą danych!");
    mysql_select_db($databaseName) or die("Baza danych o nazwie: ".$databaseName." nie istnieje!");

@@ -201,25 +201,6 @@ td.blue{
 
 
 
-/*instruktorzy*/
-
-#instruktorzy{
-  margin-left: 30px;
-  margin-right: auto;
-}
-
-.instr_info ul ul{
-  display: none;
-}
-
-.instr_info ul{
-  cursor: pointer;
-}
-
-.instr_info ul span:hover{
- font-weight: bold;
-}
-
 div.anchor{ 
   width:40%;
   height: 200px;

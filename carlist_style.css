@@ -50,11 +50,14 @@ div.centre
 
 #selectiondiv{
   margin-bottom: 20px;
-  margin-top: 70px;
   margin-left: 20%;
   position: relative;
 }
 
 select{
   display: inline;
+}
+h3{
+  margin: 0px;
+  padding: 0px;
 }

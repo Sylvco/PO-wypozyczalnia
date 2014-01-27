@@ -1,5 +1,11 @@
 <!DOCTYPE HTML>
-
+		<script type="text/javascript">
+    $("#faqs dd").hide();
+    $("#faqs dt").click(function () {
+        $(this).next("#faqs dd").slideToggle(500);
+        $(this).toggleClass("expanded");
+    });
+</script>
 <html>
 
 <head>
@@ -8,7 +14,11 @@
 
 	<meta name="description" content="Strona wypożyczalni">
 
+
+
 	<link href="faq.css" rel="stylesheet">
+
+
 
 </head>
 
@@ -21,7 +31,7 @@
     	?>
 	<nav>
 		<div>
-			<span><a href="home.php">Strona Główna</a></span>
+			<span><a href="home.php">Strona główna</a></span>
 			<span><a href="samochody.php">Samochody</a></span>
 			<span><a href="cennik.php">Cennik</a></span>
 			<span><a href="faq.php">FAQ</a></span>
@@ -32,13 +42,38 @@
 	</nav>
 	
 	</header>
-	<br><br><br><br><br>
+<!-- 	<br><br><br><br><br>
 	<div id="scroll">
 	<?php
 	 WypiszPytania();
 	?>
-	</div>
-	
+	</div> -->
+		<h2>FAQ</h2>
+	<div id="scroll">
+
+	<dl id="faqs">
+  <dt>Od ilu wypożyczeń przysługuje zniżka?</dt>
+  <dd>Od pięciu wypożyczeń.</dd>
+ 
+  <dt>Co oznacza, iż rezerwacja jest niepotwierdzona?</dt>
+  <dd>Oznacza to, iż pracownik musi się jeszcze upewnić, że dane związane z rezerwacją są poprawne.</dd>
+ 
+  <dt>Co oznaczają kategorie?</dt>
+  <dd>Od kategorii zależy dzienna stawka.</dd>
+
+  <dt>Jak wysoka jest zniżka?</dt>
+  <dd>Zniżka wynosi 10%.</dd>
+
+  <dt>Czym różni się wypożyczenie długoterminowe od krótkoterminowego?</dt>
+  <dd>Wypożyczenie długoterminowe to wypożyczenie trwające co najmniej 14 dni.</dd>
+
+   <dt>Czy mogę mieć dwie rezerwację na raz?</dt>
+  <dd>Oczywiście, że tak.</dd>
+
+   <dt>Czy mogę wypożyczyć samochód dla kogoś?</dt>
+  <dd>Tak, lecz na Pana/Pani odpowiedzialność.</dd>
+</dl>
+</div>
 </body>
 </html>
 
