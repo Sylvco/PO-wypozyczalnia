@@ -122,6 +122,16 @@ class ParserOdpowiedziMySQL {
   $info = mysql_fetch_array( $resource );
   return $info['WysokoscOplaty'];
  }
+
+   function checkIfLoginExists($login){
+  $kwerenda = "SELECT * FROM klienci WHERE login='".$login."'";
+  $resource = $this -> obslugaKwerend -> ObsluzKwerendePytajaca($kwerenda);
+  $quantity = mysql_num_rows( $resource );
+  if($quantity>0)
+    return true;
+  else
+    return false;
+ }
 }
 
 ?>
