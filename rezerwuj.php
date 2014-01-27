@@ -6,8 +6,7 @@ session_start();
 
 if(isset($_POST['idSamochodu']))
  $_SESSION['idSamochodu'] = $_POST['idSamochodu'];
- 
-echo "<br><br><br><br>".$_SESSION['idSamochodu']; 
+
 $samochod = $parserOdpowiedzi -> ZapytajBazeODaneSamochodu($_SESSION['idSamochodu']);
 
 if(isset($_POST['dataOdbioru'])){
