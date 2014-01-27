@@ -57,8 +57,8 @@ $iloscRekordow = mysql_num_rows($resource);
   echo "<div id='maindiv'>
 <div id='relativediv'>";
 $counter = 2;
-while($counter<=$iloscRekordow){
- $auto = $parserOdpowiedzi -> ZapytajBazeODaneSamochodu($counter);
+while($counter<=$iloscRekordow+1){
+  $auto = $parserOdpowiedzi -> ZapytajBazeODaneSamochodu($counter);
   $category     = $auto -> kategoria;
   $make    = $auto -> marka;
   $model     = $auto -> model;
@@ -66,6 +66,7 @@ while($counter<=$iloscRekordow){
   $gasusage    = $auto -> spalanie;
   $price    = $parserOdpowiedzi -> SprawdzCeneKategorii($category);
   $photo    = $auto -> obrazek;
+  $id = $auto -> idSamochodu;
 
 
 
@@ -81,7 +82,10 @@ echo "
 <p class='item_p'>Spalanie ".$gasusage." L</p>
 </div>
 <p>Cena bazowa ".$price." zł/dzień</p>
-<button class='column3' type='button'>Rezerwuj</button>
+<form action='rezerwuj.php' method='POST'>
+<input type='hidden' value='".$id."' name='idSamochodu'>
+<input type='submit' value='Rezerwuj'>
+</form>
 </div>
 ";
 $counter++;
