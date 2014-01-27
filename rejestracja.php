@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Klub fitness</title>
+	<title>TwentyThree | Rejestracja</title>
 
 	<meta name="description" content="Strona wypożyczalni">
 
@@ -30,12 +30,12 @@
     	?>
 	<nav>
 		<div>
-			<span><a href="home.html">Home</a></span>
-			<span><a href="samochody.html">Samochody</a></span>
-			<span><a href="cennik.html">Cennik</a></span>
-			<span><a href="faq.html">FAQ</a></span>
+			<span><a href="stronaglowna.php">Home</a></span>
+			<span><a href="samochody.php">Samochody</a></span>
+			<span><a href="cennik.php">Cennik</a></span>
+			<span><a href="faq.php">FAQ</a></span>
 			<span><a href="kontakt.php">Kontakt</a></span>
-			<span id="aliged_right_menu_item"><a href="konto.html">Konto</a></span>
+			<span id="aliged_right_menu_item"><a href="konto.php">Konto</a></span>
 		</div>
 		
 	</nav>
@@ -56,18 +56,18 @@ echo "
       <td align='right'>Login</td>
       <td align='left'><input type='text' name='login' required/></td>
       <td align='right'>Hasło</td>
-      <td align='left'><input type='text' name='pass' required/></td>
+      <td align='left'><input type='password' name='pass' required/></td>
     </tr>
     <tr>
      <td align='right'>Powtórz hasło</td>
-      <td align='left'><input type='text' name='rpass' required/></td>
+      <td align='left'><input type='password' name='rpass' required/></td>
       <td align='right'>Kod pocztowy</td>
       <td align='left'><input type='text' name='zip' required/></td>
     </tr>
     <tr>
       <td align='right'>Imie</td>
       <td align='left'><input type='text' name='first' required/></td>
-      <td align='right'>Numer domu</td>
+      <td align='right'>Ulica i numer domu</td>
       <td align='left'><input type='text' name='details' required/></td>
     </tr>
     <tr>
@@ -85,8 +85,8 @@ echo "
     </tr>
 
     <tr>
-    <td align='right'>Data urodzenia</td>
-      <td align='left'><input type='date' id='birthday' name='birthday' size='20' required/></td>
+    <td align='right'>Numer prawa jazdy</td>
+      <td align='left'><input type='text' id='birthday' name='licenseNumber' size='20' required/></td>
       <td align='right'>Miasto</td>
       <td align='left'><input type='text' name='city' required/></td>
     </tr>
