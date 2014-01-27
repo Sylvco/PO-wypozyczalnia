@@ -34,6 +34,8 @@ a{
 #listaRezerwacji {
 height: 600px;
 width: 800px;
+padding: 5px;
+  border:1px solid #a1a1a1;
 margin-left: auto;
 margin-right: auto;
 overflow:scroll;
@@ -41,7 +43,8 @@ overflow:scroll;
 
 #blokRezerwacji {
  border-style: inset;
- border-width: 3px;
+  border:2px solid #a1a1a1;
+ background: #dddddd;
 }
 
 #leftForm {
@@ -67,3 +70,57 @@ font {
 #button {
  margin-left: 225px;
 }
+
+
+a:hover{
+  color: #8D3A61;
+}
+
+nav a:hover{
+  color: #D9E6F7;
+  background-color: #8D3A61;
+}
+
+p{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+.column1 {
+    float:left;
+    width: 32%;
+    display:inline-block;
+  }
+
+.column2 {
+  margin-left: 20px;
+    float:left;
+    width: 32%;
+    display:inline-block;
+  }
+
+.column3 {  
+    float:left;
+    width: 32%;
+    display:inline-block;
+  }
+
+  #checkboxstyle{
+    float: right;
+    width: 30%;
+    text-align: right;
+  }
+
+  #top{
+    width: 70%;
+    float: left;
+  }
+
+  h2{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+  }

@@ -118,18 +118,28 @@ function StworzObiektyRezerwacji($resource){
 function DajBlokRezerwacjiDla($rezerwacja, $samochod){
  return '  <div id="blokRezerwacji">
 						   
-		   <div id="top"><p> Numer Rezerwacji: '.$rezerwacja -> idRezerwacji.'</p><div><input type="checkbox" disabled="disabled" '.DajChecked($rezerwacja).'> Potwierdzona</div></div><br>
-		   Marka: '.$samochod -> marka.'<br>
-		   Model: '.$samochod -> model.'<br>
-		   Data Odbioru: '.$rezerwacja -> odKiedy.'<br>
-		   Data Zwrotu: '.$rezerwacja -> doKiedy.'<br>
-		   Miejsce Odbioru: '.$rezerwacja -> miejsceOdbioru.'<br>
-		   Miejsce Zwrotu: '.$rezerwacja -> miejsceZwrotu.'<br>
-		   
-		   
+		   <div id="top"><p> 
+		   Numer Rezerwacji: '.$rezerwacja -> idRezerwacji.'</p>
+		   </div>
+		   <div id="checkboxstyle"><input type="checkbox" disabled="disabled" '.DajChecked($rezerwacja).'> Potwierdzona</div>
+
+		   <div style='margin-top: 30px; text-align: center;'>
+		   <div class="column1">
+		   <p>Marka: '.$samochod -> marka.'</p>
+		   <p>Model: '.$samochod -> model.'</p>
+		   </div>
+		   <div class="column2">
+		   <p>Data Odbioru: '.$rezerwacja -> odKiedy.'</p>
+		   <p>Data Zwrotu: '.$rezerwacja -> doKiedy.'</p>
+		   </div>
+		   <div class="column3">
+		   <p>Miejsce Odbioru: '.$rezerwacja -> miejsceOdbioru.'</p>
+		   <p>Miejsce Zwrotu: '.$rezerwacja -> miejsceZwrotu.'</p>
+		   </div>
+		   </div>
 		   <br>
 		   
-		   <form action="usunRezerwacje.php" method="POST">
+		   <form style='text-align: right;' action="usunRezerwacje.php" method="POST">
 		   <input type="hidden" value="'.$rezerwacja->idRezerwacji.'" name="idRezerwacji">
 		   <input type="submit" value="Anuluj rezerwację">
 		   </form>
