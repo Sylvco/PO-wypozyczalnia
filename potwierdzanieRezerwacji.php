@@ -32,7 +32,7 @@
 
 	<meta name="description" content="Strona wypożyczalni">
 
-	<link href="menu.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 
 </head>
 

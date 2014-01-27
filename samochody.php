@@ -49,9 +49,9 @@ $iloscRekordow = mysql_num_rows($resource);
  <p class='item_p'><h3>Kategoria: </h3></p>
 <select>
   <option value='all'>All</option>
-  <option value='B'>B</option>
-  <option value='A'>B</option>
-  <option value='S'>S</option>
+  <option value='A1'>A1</option>
+  <option value='A2'>A2</option>
+  <option value='A3'>A3</option>
 </select>
 </div>";
   echo "<div id='maindiv'>

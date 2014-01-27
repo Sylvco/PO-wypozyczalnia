@@ -61,7 +61,7 @@
 				<div id="button"> <input type="submit" value="Zmień dane"> </div>
 	</form>
 	<br><br><br><br>
-	<center>Ostatnie Rezerwacje</center><br>
+	<h2>Ostatnie Rezerwacje</h2>
 	<div id="listaRezerwacji">
 
     <?php 

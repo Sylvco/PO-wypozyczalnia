@@ -12,7 +12,7 @@
 
 	<meta name="description" content="Strona Wypożyczalni TwentyThree">
 
-	<link href="menu.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	
 </head>
 

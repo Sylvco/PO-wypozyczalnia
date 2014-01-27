@@ -8,7 +8,7 @@
 
 	<meta name="description" content="Strona wypożyczalni">
 
-	<link href="menu.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 
 </head>
 
@@ -26,18 +26,31 @@
 	</nav> <br><br><br><br>
 	
 	</header>
-	
-	<form action="odnotujTransakcje.php" method="POST">
-	
-	<select name="typTransakcji">
+
+
+   	<form action="odnotujTransakcje.php" method="POST">
+  <table>
+  <tr>
+      <td align='right'>	<select name="typTransakcji">
 	 <option name="odbior">Odbiór Samochodu</option>
 	 <option name="zwrot">Zwrot Samochodu</option>
-	</select>Typ transakcji
-	<br>
-	<input type="text" name="idRezerwacji" required>Numer rezerwacji
-	<br><br>
-	<input type="submit" value="Odnotuj">
-	</form>
-		
+	</select></td>
+      <td align='left'>Typ transakcji</td>
+
+    </tr>
+    <tr>
+     <td align='right'><input type="text" name="idRezerwacji" required></td>
+      <td align='left'>Numer rezerwacji</td>
+
+    </tr>
+
+
+  </table>
+
+	<input style='margin-left: 10px' type="submit" value="Odnotuj">
+</form>
+
+	
+
 </body>
 </html>
