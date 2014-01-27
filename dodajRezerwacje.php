@@ -33,8 +33,23 @@ function dodajRezerwacje($idKlienta){
  $kwerenda = 'INSERT INTO rezerwacje (Od, Do, Potwierdzone, WysokoscOplaty, WysokoscKaucji, SamochodOdebrany, SamochodZwrocony, Klient, Pracownik, Samochod, MiejsceOdbioru, MiejsceZwrotu) 
                               VALUES ("'.$dataOdbioru.'","'.$dataZwrotu.'","0","'.$cena.'","'.$kaucja.'","0","0","'.$idKlienta.'","0","'.$idSamochodu.'","'.$miejsceOdbioru.'","'.$miejsceZwrotu.'")';
  $obslugaKwerend -> ObsluzKwerendePytajaca($kwerenda);
+ CzyscSesje();
  echo "<center><meta charset='utf-8'><br><br><br>Pomyślnie zarezerwowano samochód.</center>";
  header('Refresh:5; URL=konto.php');
+}
+
+function CzyscSesje(){
+ CzyscPoleSesji('cena');
+ CzyscPoleSesji('kaucja');
+ CzyscPoleSesji('dataOdbioru');
+ CzyscPoleSesji('dataZwrotu');
+ CzyscPoleSesji('miejsceOdbioru');
+ CzyscPoleSesji('miejsceZwrotu');
+ CzyscPoleSesji('idSamochodu');
+}
+
+function CzyscPoleSesji($pole){
+ unset($_SESSION[$pole]);
 }
 
 ?>

@@ -10,6 +10,6 @@ if(isset($_POST['idRezerwacji'])){
  
  $obslugaKwerend -> ObsluzKwerendePytajaca($kwerenda);
 }
-
-header('Location: odnotowywanieTransakcji.php');
+echo "<center><meta charset='utf-8'>Odnotowano transakcję: ".$_POST['typTransakcji']." dla rezerwacji numer: ".$_POST['idRezerwacji']."</center>";
+header('Refresh: 5; URL=odnotowywanieTransakcji.php');
 ?>
