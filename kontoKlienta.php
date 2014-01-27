@@ -48,9 +48,9 @@
 	<br><br>
 	<form action="updateClientsEmailAndNumber.php" method="post">
 				<div id="form">
-				<div id="leftForm">
-				    Adres e-mail:<br>
-					Numer kontaktowy: 
+				<div id="leftForm">				    
+					Numer kontaktowy:<br>
+					Adres e-mail:
 				</div>
 				<div id="rightForm">
 				<input type="text" name="numer" value="<?php echo $client -> numerTelefonu;?>" required> <br>

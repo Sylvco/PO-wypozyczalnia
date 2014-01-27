@@ -45,5 +45,14 @@ footer{
   margin:0px;
 }
 
+a:hover{
+  color: #8D3A61;
+}
+
+nav a:hover{
+  color: #D9E6F7;
+  background-color: #8D3A61;
+}
+
 
 
